@@ -1,0 +1,19 @@
+{
+  "origem": "BSB",
+  "destinos": {
+    "NAT": { "nome": "Natal", "aeroportos": "NAT", "limite": 700 },
+    "SAO": { "nome": "São Paulo", "aeroportos": "CGH,GRU,VCP", "limite": 400 },
+    "RIO": { "nome": "Rio de Janeiro", "aeroportos": "GIG,SDU", "limite": 400 }
+  },
+  "dias_inicio": 14,
+  "dias_fim": 120,
+  "passo_dias": 14,
+  "estadias": [4],
+  "max_escalas": 1,
+  "desconto_min": 0.3,
+  "min_amostras": 15,
+  "janela_historico_dias": 90,
+  "max_alertas_por_mensagem": 5,
+  "provedores_sempre": ["travelpayouts"],
+  "provedores_semanais": ["serpapi"]
+}
