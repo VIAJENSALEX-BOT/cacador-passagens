@@ -1,0 +1,53 @@
+name: Cacador de passagens
+
+on:
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+    inputs:
+      todos:
+        description: "Usar tambem os sites semanais (SerpApi)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: cacador
+  cancel-in-progress: false
+
+jobs:
+  buscar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar dependencias
+        run: pip install requests
+
+      - name: Buscar passagens
+        env:
+          TRAVELPAYOUTS_TOKEN: ${{ secrets.TRAVELPAYOUTS_TOKEN }}
+          SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
+          AMADEUS_ID: ${{ secrets.AMADEUS_ID }}
+          AMADEUS_SECRET: ${{ secrets.AMADEUS_SECRET }}
+          TWILIO_SID: ${{ secrets.TWILIO_SID }}
+          TWILIO_TOKEN: ${{ secrets.TWILIO_TOKEN }}
+          TWILIO_FROM: ${{ secrets.TWILIO_FROM }}
+          WHATSAPP_TO: ${{ secrets.WHATSAPP_TO }}
+          FORCAR_TODOS: ${{ inputs.todos && '1' || '' }}
+        run: python cacador_passagens.py
+
+      - name: Salvar resultados
+        if: always()
+        run: |
+          git config user.name "cacador-bot"
+          git config user.email "cacador-bot@users.noreply.github.com"
+          git add estado.json docs/dados.json
+          git diff --staged --quiet || (git commit -m "Atualiza precos" && git push)
