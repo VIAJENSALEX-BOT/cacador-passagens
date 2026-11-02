@@ -1,11 +1,11 @@
 {
- "atualizado": "2026-11-02T21:18:26Z",
+ "atualizado": "2026-11-02T22:58:11Z",
  "origem": "BSB",
  "desconto_min": 0.3,
  "destinos": {
   "NAT": {
    "nome": "Natal",
-   "limite": 700,
+   "limite": 1000,
    "mediana": null,
    "ofertas": [
     {
@@ -34,7 +34,7 @@
   },
   "SAO": {
    "nome": "São Paulo",
-   "limite": 400,
+   "limite": 700,
    "mediana": null,
    "ofertas": [
     {
@@ -54,12 +54,12 @@
      "link": "https://www.aviasales.com/search/BSB2711SAO29111?t=AD17957556001795761600000100BSBVCP17959398001795945500000095VCPBSB_ec0d0838641d3092758cf6d8fd27a7dc_13595&search_date=29102026&expected_price_uuid=01a1878c-e0a9-8031-2004-b7cb2bc33325&static_fare_key=TY%7CP0%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=U01wTDAi66-qQOiJPLRdVw&expected_price_source=share&expected_price_currency=brl&expected_price=908"
     },
     {
-     "ida": "2026-12-11",
-     "volta": "2026-12-13",
-     "preco": 979.0,
+     "ida": "2026-12-17",
+     "volta": "2026-12-20",
+     "preco": 952.0,
      "escalas": 0,
      "fonte": "Aviasales",
-     "link": "https://www.aviasales.com/search/BSB1112SAO13121?t=AD17969772001796983200000100BSBVCP17972037001797209400000095VCPBSB_a4983919e42115844ff8d1ce6dce302f_14456&search_date=31102026&expected_price_uuid=01a191d6-f6fd-8040-648c-3610542f0f33&static_fare_key=TY%7CP1%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=opMhMJNcstDrVEsvbyuBHg&expected_price_source=share&expected_price_currency=brl&expected_price=979"
+     "link": "https://www.aviasales.com/search/BSB1712SAO20121?t=AD17975352001797541200000100BSBVCP17978046001797810300000095VCPBSB_62cc162f676b88aa6b8bccb69ad60a4a_14219&search_date=02112026&expected_price_uuid=01a19e5c-73e8-8040-691d-9c978c1e4ad3&static_fare_key=TY%7CP1%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=u4ZLrb_NTyUXTxCqRY_I0w&expected_price_source=share&expected_price_currency=brl&expected_price=952"
     },
     {
      "ida": "2026-11-19",
@@ -79,7 +79,7 @@
   },
   "RIO": {
    "nome": "Rio de Janeiro",
-   "limite": 400,
+   "limite": 700,
    "mediana": null,
    "ofertas": [
     {
@@ -106,5 +106,27 @@
     }
    ]
   }
- }
+ },
+ "monitores": [
+  {
+   "id": "mmvzuivjn",
+   "destino": "SAO",
+   "nome": "São Paulo",
+   "ida": "2027-02-01",
+   "volta": "2027-02-05",
+   "flex": 0,
+   "limite": 1000.0,
+   "ofertas": []
+  },
+  {
+   "id": "mmvzuzqum",
+   "destino": "NAT",
+   "nome": "Natal",
+   "ida": "2027-01-01",
+   "volta": "2027-01-10",
+   "flex": 0,
+   "limite": 3000.0,
+   "ofertas": []
+  }
+ ]
 }
