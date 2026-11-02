@@ -1,19 +1,48 @@
 {
   "origem": "BSB",
   "destinos": {
-    "NAT": { "nome": "Natal", "aeroportos": "NAT", "limite": 700 },
-    "SAO": { "nome": "São Paulo", "aeroportos": "CGH,GRU,VCP", "limite": 400 },
-    "RIO": { "nome": "Rio de Janeiro", "aeroportos": "GIG,SDU", "limite": 400 }
+    "NAT": {
+      "nome": "Natal",
+      "aeroportos": "NAT",
+      "limite": 1000
+    },
+    "SAO": {
+      "nome": "São Paulo",
+      "aeroportos": "CGH,GRU,VCP",
+      "limite": 700
+    },
+    "RIO": {
+      "nome": "Rio de Janeiro",
+      "aeroportos": "GIG,SDU",
+      "limite": 700
+    }
   },
   "dias_inicio": 14,
   "dias_fim": 120,
   "passo_dias": 14,
-  "estadias": [4],
+  "estadias": [
+    4
+  ],
   "max_escalas": 1,
   "desconto_min": 0.3,
   "min_amostras": 15,
   "janela_historico_dias": 90,
   "max_alertas_por_mensagem": 5,
-  "provedores_sempre": ["travelpayouts"],
-  "provedores_semanais": ["serpapi"]
+  "provedores_sempre": [
+    "travelpayouts"
+  ],
+  "provedores_semanais": [
+    "serpapi"
+  ],
+  "varredura_geral": true,
+  "monitores": [
+    {
+      "id": "mmvzuivjn",
+      "destino": "SAO",
+      "ida": "2027-02-01",
+      "volta": "2027-02-05",
+      "flex": 0,
+      "limite": 1000
+    }
+  ]
 }
