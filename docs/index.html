@@ -19,7 +19,7 @@ body{margin:0;min-height:100%;background:var(--bg);color:var(--tx);font:16px/1.4
 header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 16px 8px}
 h1{font-size:20px;margin:0}
 .sub{color:var(--mut);font-size:13px;margin-top:2px}
-button{font:inherit;border:1px solid var(--brd);background:var(--card);color:var(--tx);padding:8px 14px;border-radius:999px}
+button,a.btn{font:inherit;border:1px solid var(--brd);background:var(--card);color:var(--tx);padding:8px 14px;border-radius:999px;text-decoration:none;display:inline-block}
 main{padding:8px 16px 32px;display:grid;gap:14px;max-width:640px;margin:0 auto}
 .card{background:var(--card);border:1px solid var(--brd);border-radius:16px;padding:16px}
 .topo{display:flex;align-items:center;justify-content:space-between;gap:8px}
@@ -43,7 +43,7 @@ li a{color:var(--pri);text-decoration:none;font-weight:600;font-size:14px}
     <h1>✈️ Caçador de Passagens</h1>
     <div class="sub" id="sub">Carregando…</div>
   </div>
-  <button id="atualizar" type="button">Atualizar</button>
+  <div style="display:flex;gap:8px"><a class="btn" href="config.html">Ajustes</a><button id="atualizar" type="button">Atualizar</button></div>
 </header>
 <main id="lista"></main>
 <script>
@@ -55,6 +55,7 @@ const esc = s => String(s).replace(/[&<>"']/g, c => ({"&": "&amp;", "<": "&lt;",
 const seguro = u => (typeof u === "string" && u.startsWith("https://")) ? u : null;
 
 function grafico(serie) {
+  if (serie === null) return "";
   if (!serie || serie.length < 2) {
     return '<div class="mut" style="margin:10px 0">O gráfico aparece depois de algumas rodadas.</div>';
   }
@@ -104,14 +105,18 @@ async function carregar() {
     if (!r.ok) throw new Error("HTTP " + r.status);
     const dados = await r.json();
     const cods = Object.keys(dados.destinos || {});
-    if (!dados.atualizado || !cods.length) {
+    const mons = dados.monitores || [];
+    if (!dados.atualizado || (!cods.length && !mons.length)) {
       sub.textContent = "Ainda sem dados";
       lista.innerHTML = '<div class="vazio">A primeira rodada do programa preenche esta tela.</div>';
       return;
     }
     const quando = new Date(dados.atualizado).toLocaleString("pt-BR", {day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit"});
     sub.textContent = "Saindo de " + dados.origem + " · atualizado em " + quando;
-    lista.innerHTML = cods.map(c => cartao(c, dados.destinos[c], dados.desconto_min || 0.3)).join("");
+    const cartoesMon = mons.map(m => cartao(m.destino, {
+      nome: m.nome + " · " + dm(m.ida) + " → " + dm(m.volta) + (m.flex ? " (± " + m.flex + "d)" : ""),
+      limite: m.limite, mediana: null, ofertas: m.ofertas, serie: null}, 0.3)).join("");
+    lista.innerHTML = cartoesMon + cods.map(c => cartao(c, dados.destinos[c], dados.desconto_min || 0.3)).join("");
   } catch (e) {
     sub.textContent = "Não foi possível carregar";
     lista.innerHTML = '<div class="vazio">Sem conexão ou sem dados ainda. Toque em Atualizar.</div>';

@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ajustes · Caçador de Passagens</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0b5fff">
+<style>
+:root{--bg:#f4f6fb;--card:#fff;--tx:#14171f;--mut:#667085;--brd:#d7dce6;--pri:#0b5fff;--ok:#0a8f4d;--err:#c0261d}
+@media(prefers-color-scheme:dark){:root{--bg:#0e1117;--card:#171b24;--tx:#eef1f7;--mut:#98a2b3;--brd:#2d3445;--pri:#6ea0ff;--ok:#4cd38a;--err:#ff8a80}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.4 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;padding:env(safe-area-inset-top,0) env(safe-area-inset-right,0) env(safe-area-inset-bottom,0) env(safe-area-inset-left,0)}
+header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 16px 8px}
+h1{font-size:20px;margin:0}h2{font-size:17px;margin:0 0 8px}
+.sub,.mut{color:var(--mut);font-size:13px}
+main{padding:8px 16px 40px;display:grid;gap:14px;max-width:640px;margin:0 auto}
+.card{background:var(--card);border:1px solid var(--brd);border-radius:16px;padding:16px}
+label{display:block;font-size:13px;color:var(--mut);margin:8px 0 0}
+input,select{width:100%;font:inherit;color:var(--tx);background:var(--bg);border:1px solid var(--brd);border-radius:10px;padding:10px;margin-top:4px}
+.l{display:block}.linha{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.mon{border:1px solid var(--brd);border-radius:12px;padding:12px;margin-top:10px}
+button,a.btn{font:inherit;border:1px solid var(--brd);background:var(--card);color:var(--tx);padding:10px 14px;border-radius:999px;text-decoration:none;display:inline-block}
+button.p{background:var(--pri);border-color:var(--pri);color:#fff;font-weight:600}
+.acoes{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+#msg{min-height:22px;font-size:14px;margin-top:10px}#msg.ok{color:var(--ok)}#msg.erro{color:var(--err)}
+.chk{display:flex;align-items:center;gap:10px;margin-top:10px;color:var(--tx);font-size:15px}.chk input{width:auto;margin:0}
+details{margin-top:10px;font-size:14px;color:var(--mut)}details ol{padding-left:20px;margin:8px 0}
+</style>
+</head>
+<body>
+<header>
+  <div><h1>⚙️ Ajustes</h1><div class="sub" id="st">Carregando…</div></div>
+  <a class="btn" href="./">Voltar</a>
+</header>
+<main>
+  <section class="card">
+    <h2>Acesso</h2>
+    <div class="mut">Para salvar e iniciar buscas por aqui, esta página usa um token do GitHub, guardado só neste aparelho.</div>
+    <label>Repositório<input id="repo" autocomplete="off" placeholder="usuario/cacador-passagens"></label>
+    <label>Token do GitHub<input id="tok" type="password" autocomplete="off" placeholder="github_pat_..."></label>
+    <div class="acoes"><button id="gtok" type="button">Guardar token</button><button id="etok" type="button">Esquecer token</button></div>
+    <details><summary>Como criar o token</summary>
+      <ol>
+        <li>No GitHub: foto do perfil → Settings → Developer settings.</li>
+        <li>Personal access tokens → Fine-grained tokens → Generate new token.</li>
+        <li>Repository access: Only select repositories → cacador-passagens.</li>
+        <li>Permissions: Contents = Read and write; Actions = Read and write.</li>
+        <li>Gere, copie e cole acima. Ele funciona como senha: não mostre a ninguém.</li>
+      </ol>
+    </details>
+  </section>
+
+  <section class="card">
+    <h2>Preço máximo por destino</h2>
+    <div class="mut">Ida e volta, em reais. Você é avisado quando achar abaixo disso.</div>
+    <div id="lims"></div>
+    <label class="chk"><input type="checkbox" id="geral"> Varredura geral (procurar datas variadas nesses destinos)</label>
+  </section>
+
+  <section class="card">
+    <h2>Datas específicas</h2>
+    <div class="mut">Escolha o destino, as datas e o preço máximo. A folga procura também alguns dias antes e depois.</div>
+    <datalist id="dl"></datalist>
+    <div id="mons"></div>
+    <div class="acoes"><button id="add" type="button">+ Adicionar viagem</button></div>
+  </section>
+
+  <section class="card">
+    <div class="acoes">
+      <button class="p" id="salvar" type="button">Salvar</button>
+      <button id="sb" type="button">Salvar e buscar agora</button>
+    </div>
+    <label class="chk"><input type="checkbox" id="todos"> Incluir também o Google Flights nesta busca (gasta cota)</label>
+    <div id="msg" role="status"></div>
+  </section>
+</main>
+<script>
+"use strict";
+const $ = s => document.querySelector(s);
+const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"}[c]));
+const KT = "cacador_token", KR = "cacador_repo";
+let cfg = null, sha = null;
+
+const lerLS = k => { try { return localStorage.getItem(k) || ""; } catch (e) { return ""; } };
+const gravaLS = (k, v) => { try { v ? localStorage.setItem(k, v) : localStorage.removeItem(k); } catch (e) {} };
+function msg(t, tipo) { const m = $("#msg"); m.textContent = t; m.className = tipo || ""; }
+const dec = b => new TextDecoder().decode(Uint8Array.from(atob(b.replace(/\n/g, "")), c => c.charCodeAt(0)));
+const enc = s => { let b = ""; new TextEncoder().encode(s).forEach(x => b += String.fromCharCode(x)); return btoa(b); };
+
+async function api(caminho, opt) {
+  opt = opt || {};
+  const repo = $("#repo").value.trim();
+  if (!/^[\w.-]+\/[\w.-]+$/.test(repo)) throw new Error("Preencha o repositório (usuario/nome)");
+  const h = {"Accept": "application/vnd.github+json", "X-GitHub-Api-Version": "2022-11-28"};
+  const t = lerLS(KT);
+  if (t) h.Authorization = "Bearer " + t;
+  const r = await fetch("https://api.github.com/repos/" + repo + caminho, Object.assign({}, opt, {headers: h}));
+  if (!r.ok) {
+    let m = ""; try { m = (await r.json()).message; } catch (e) {}
+    throw new Error(r.status + " " + (m || r.statusText));
+  }
+  return r.status === 204 ? null : r.json();
+}
+
+function monHtml(m) {
+  const opts = [0, 1, 2, 3].map(n => '<option value="' + n + '"' + (Number(m.flex || 0) === n ? " selected" : "") + ">± " + n + " dia" + (n === 1 ? "" : "s") + "</option>").join("");
+  return '<div class="mon" data-id="' + esc(m.id) + '">' +
+    '<div class="linha"><label>Destino (3 letras)<input class="dest" list="dl" maxlength="3" value="' + esc(m.destino) + '" placeholder="SAO"></label>' +
+    '<label>Preço máximo (R$)<input class="lim" type="number" inputmode="numeric" min="1" value="' + esc(m.limite) + '"></label></div>' +
+    '<div class="linha"><label>Ida<input class="ida" type="date" value="' + esc(m.ida) + '"></label>' +
+    '<label>Volta<input class="volta" type="date" value="' + esc(m.volta) + '"></label></div>' +
+    '<div class="linha"><label>Folga<select class="flex">' + opts + '</select></label>' +
+    '<div style="align-self:end"><button type="button" class="rm">Remover</button></div></div></div>';
+}
+
+function render() {
+  $("#geral").checked = cfg.varredura_geral !== false;
+  $("#dl").innerHTML = Object.keys(cfg.destinos || {}).map(c => '<option value="' + esc(c) + '">').join("");
+  $("#lims").innerHTML = Object.entries(cfg.destinos || {}).map(([c, d]) =>
+    '<label class="l">' + esc(d.nome) + " (" + esc(c) + ')<input type="number" inputmode="numeric" min="1" data-c="' + esc(c) + '" value="' + esc(d.limite) + '"></label>').join("");
+  $("#mons").innerHTML = (cfg.monitores || []).map(monHtml).join("") || '<div class="mut" id="vazio">Nenhuma viagem com datas ainda.</div>';
+  $("#st").textContent = "Configuração carregada";
+}
+
+function coletar() {
+  cfg.varredura_geral = $("#geral").checked;
+  document.querySelectorAll("#lims input").forEach(i => {
+    const v = Number(i.value);
+    if (!(v > 0)) throw new Error("Preço inválido em " + i.dataset.c);
+    cfg.destinos[i.dataset.c].limite = v;
+  });
+  cfg.monitores = Array.from(document.querySelectorAll(".mon")).map(e => {
+    const q = c => e.querySelector(c).value;
+    const m = {id: e.dataset.id, destino: q(".dest").trim().toUpperCase(), ida: q(".ida"), volta: q(".volta"), flex: Number(q(".flex")), limite: Number(q(".lim"))};
+    if (!/^[A-Z]{3}$/.test(m.destino)) throw new Error("O destino precisa ter 3 letras (ex.: SAO, NAT, SSA)");
+    if (!m.ida || !m.volta || m.volta < m.ida) throw new Error("Confira as datas de ida e volta");
+    if (!(m.limite > 0)) throw new Error("Informe o preço máximo de cada viagem");
+    return m;
+  });
+}
+
+async function carregar() {
+  try {
+    const j = await api("/contents/config.json?ref=main&ts=" + Date.now());
+    sha = j.sha; cfg = JSON.parse(dec(j.content)); cfg.destinos = cfg.destinos || {};
+    render();
+  } catch (e) { $("#st").textContent = "Não foi possível carregar"; msg("Erro: " + e.message, "erro"); }
+}
+
+async function salvar() {
+  msg("Salvando…");
+  try {
+    if (!cfg) throw new Error("A configuração ainda não carregou");
+    if (!lerLS(KT)) throw new Error("Guarde o token do GitHub na seção Acesso");
+    coletar();
+    const j = await api("/contents/config.json", {method: "PUT", body: JSON.stringify({
+      message: "Atualiza ajustes pela página", content: enc(JSON.stringify(cfg, null, 2) + "\n"), sha: sha, branch: "main"})});
+    sha = j.content.sha;
+    msg("Salvo! A próxima rodada já usa estes valores.", "ok");
+    return true;
+  } catch (e) { msg("Erro: " + e.message, "erro"); return false; }
+}
+
+async function buscar() {
+  try {
+    await api("/actions/workflows/cacador.yml/dispatches", {method: "POST", body: JSON.stringify({ref: "main", inputs: {todos: $("#todos").checked ? "true" : "false"}})});
+    msg("Salvo e busca iniciada. Em 2 a 3 minutos, atualize o painel.", "ok");
+  } catch (e) { msg("Salvo, mas não consegui iniciar a busca: " + e.message, "erro"); }
+}
+
+$("#add").addEventListener("click", () => {
+  const v = $("#vazio"); if (v) v.remove();
+  $("#mons").insertAdjacentHTML("beforeend", monHtml({id: "m" + Date.now().toString(36), destino: "", ida: "", volta: "", flex: 0, limite: ""}));
+});
+$("#mons").addEventListener("click", e => { if (e.target.classList.contains("rm")) e.target.closest(".mon").remove(); });
+$("#salvar").addEventListener("click", salvar);
+$("#sb").addEventListener("click", async () => { if (await salvar()) buscar(); });
+$("#gtok").addEventListener("click", () => { const t = $("#tok").value.trim(); if (t) { gravaLS(KT, t); $("#tok").value = ""; msg("Token guardado neste aparelho.", "ok"); } });
+$("#etok").addEventListener("click", () => { gravaLS(KT, ""); msg("Token apagado deste aparelho.", "ok"); });
+$("#repo").addEventListener("change", () => gravaLS(KR, $("#repo").value.trim()));
+
+(function iniciar() {
+  const h = location.hostname, p = location.pathname.split("/").filter(Boolean);
+  const auto = h.endsWith(".github.io") && p[0] ? h.split(".")[0] + "/" + p[0] : "";
+  $("#repo").value = lerLS(KR) || auto;
+  if (lerLS(KT)) $("#tok").placeholder = "Token guardado neste aparelho ✓";
+  carregar();
+})();
+</script>
+</body>
+</html>
