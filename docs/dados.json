@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-02T23:06:25Z",
+ "atualizado": "2026-11-02T23:07:50Z",
  "origem": "BSB",
  "desconto_min": 0.3,
  "destinos": {
@@ -35,7 +35,7 @@
   "SAO": {
    "nome": "São Paulo",
    "limite": 700,
-   "mediana": null,
+   "mediana": 930.0,
    "ofertas": [
     {
      "ida": "2027-01-22",
@@ -112,8 +112,8 @@
    "id": "mmvzuivjn",
    "destino": "SAO",
    "nome": "São Paulo",
-   "ida": "2027-02-01",
-   "volta": "2027-02-05",
+   "ida": "2027-05-08",
+   "volta": "2027-05-13",
    "flex": 0,
    "limite": 1000.0,
    "ofertas": []
@@ -122,10 +122,10 @@
    "id": "mmvzuzqum",
    "destino": "NAT",
    "nome": "Natal",
-   "ida": "2027-01-01",
-   "volta": "2027-01-10",
+   "ida": "2027-05-08",
+   "volta": "2027-05-13",
    "flex": 0,
-   "limite": 3000.0,
+   "limite": 1000.0,
    "ofertas": []
   }
  ]
