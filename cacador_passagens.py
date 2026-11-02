@@ -55,6 +55,9 @@ PADRAO = {
     "max_alertas_por_mensagem": 5,
     "provedores_sempre": ["travelpayouts"],
     "provedores_semanais": ["serpapi"],
+    "varredura_geral": True,
+    "monitores": [],
+    "provedores_diarios_monitores": ["serpapi"],
 }
 
 SEGREDOS = [
@@ -319,6 +322,85 @@ def enviar_whatsapp(texto):
         return False
 
 
+# ------------------- BUSCAS COM DATAS ESPECÍFICAS (AJUSTES) -------------------
+def oferta_painel(origem, info, i, v, o):
+    return {
+        "ida": i.isoformat(),
+        "volta": v.isoformat(),
+        "preco": o["preco"],
+        "escalas": o["escalas"],
+        "fonte": o["fonte"],
+        "link": o.get("link") or link_google(origem, info, i, v),
+    }
+
+
+def rodar_monitores(cfg, agora, estado, dados_ant):
+    """Cada monitor = um destino, datas de ida/volta (com folga de ± dias) e um limite."""
+    painel, alertas, total = [], [], 0
+    forcar = bool(os.environ.get("FORCAR_TODOS"))
+    nomes = list(cfg["provedores_sempre"])
+    if forcar or agora.hour < 6:  # SerpApi: só na primeira rodada do dia
+        nomes += [n for n in cfg["provedores_diarios_monitores"] if n not in nomes]
+    if forcar:
+        nomes += [n for n in cfg["provedores_semanais"] if n not in nomes]
+    nomes = [n for n in nomes if n in FUNCOES and all(os.environ.get(v) for v in EXIGE[n])]
+    anteriores = {m.get("id"): m for m in dados_ant.get("monitores", [])}
+
+    for m in cfg.get("monitores", []):
+        try:
+            ida0 = date.fromisoformat(m["ida"])
+            volta0 = date.fromisoformat(m["volta"])
+            destino = str(m["destino"]).upper()
+            limite = float(m["limite"])
+            flex = max(0, min(3, int(m.get("flex", 0))))
+        except Exception as e:
+            print(f"[aviso] busca com datas ignorada (dados inválidos): {limpar(e)}")
+            continue
+        info = cfg["destinos"].get(destino) or {"nome": destino, "aeroportos": destino}
+        achadas = []
+        for d in range(-flex, flex + 1):
+            ida, volta = ida0 + timedelta(days=d), volta0 + timedelta(days=d)
+            for n in nomes:
+                try:
+                    for o in FUNCOES[n](cfg["origem"], destino, info, ida, volta):
+                        oi, ov = o.get("ida", ida), o.get("volta", volta)
+                        if (
+                            o["escalas"] <= cfg["max_escalas"]
+                            and abs((oi - ida0).days) <= flex
+                            and abs((ov - volta0).days) <= flex
+                        ):
+                            achadas.append((oi, ov, o))
+                except Exception as e:
+                    print(f"[erro] {n} {destino} {ida}: {limpar(e)[:200]}")
+            time.sleep(1)
+        total += len(achadas)
+        melhores = sorted(achadas, key=lambda a: a[2]["preco"])[:5]
+        ofertas = [oferta_painel(cfg["origem"], info, i, v, o) for i, v, o in melhores]
+        if not ofertas:
+            ofertas = anteriores.get(m.get("id"), {}).get("ofertas", [])
+        painel.append(
+            {
+                "id": m.get("id"), "destino": destino, "nome": info["nome"],
+                "ida": m["ida"], "volta": m["volta"], "flex": flex,
+                "limite": limite, "ofertas": ofertas,
+            }
+        )
+        print(f"[ok] {info['nome']} {m['ida']}→{m['volta']}: {len(achadas)} ofertas")
+        if melhores:
+            i, v, o = melhores[0]
+            chave = f"M|{m.get('id')}|{i}|{v}"
+            if o["preco"] <= limite and eh_alerta_novo(estado["alertas"], chave, o["preco"]):
+                esc = "direto" if o["escalas"] == 0 else f"{o['escalas']} escala"
+                link = o.get("link") or link_google(cfg["origem"], info, i, v)
+                texto = (
+                    f"🎯 {cfg['origem']} → {info['nome']}: {reais(o['preco'])}\n"
+                    f"Abaixo do seu limite de {reais(limite)}\n"
+                    f"Ida {i:%d/%m} · Volta {v:%d/%m} · {esc} · {o['fonte']}\n{link}"
+                )
+                alertas.append((1 - o["preco"] / limite, o["preco"], chave, texto))
+    return painel, alertas, total
+
+
 # --------------------------------- MAIN ---------------------------------
 def executar():
     cfg = carregar_config()
@@ -346,7 +428,8 @@ def executar():
     alertas = []
     total = 0
 
-    for codigo, info in cfg["destinos"].items():
+    varredura = cfg["destinos"].items() if cfg.get("varredura_geral", True) else []
+    for codigo, info in varredura:
         mediana = mediana_historica(estado["precos"], codigo, cfg)  # antes de somar os de hoje
         coletados = []
         for ida, volta in datas_busca(cfg):
@@ -413,6 +496,11 @@ def executar():
         }
         print(f"[ok] {info['nome']}: {len(coletados)} datas coletadas")
 
+    mon_painel, mon_alertas, mon_total = rodar_monitores(cfg, agora, estado, dados_ant)
+    dados["monitores"] = mon_painel
+    alertas += mon_alertas
+    total += mon_total
+
     gravar_json(ARQ_ESTADO, estado)
     gravar_json(ARQ_DADOS, dados, indent=1)
 
@@ -428,7 +516,10 @@ def executar():
         print("Nenhuma promoção nova desta vez.")
 
     if total == 0:
-        sys.exit("Nenhuma oferta coletada: confira as chaves e os erros acima.")
+        if cfg.get("monitores") or not cfg.get("varredura_geral", True):
+            print("[aviso] Nenhuma oferta coletada nesta rodada.")
+        else:
+            sys.exit("Nenhuma oferta coletada: confira as chaves e os erros acima.")
 
 
 if __name__ == "__main__":
