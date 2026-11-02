@@ -43,6 +43,14 @@
       "volta": "2027-02-05",
       "flex": 0,
       "limite": 1000
+    },
+    {
+      "id": "mmvzuzqum",
+      "destino": "NAT",
+      "ida": "2027-01-01",
+      "volta": "2027-01-10",
+      "flex": 0,
+      "limite": 3000
     }
   ]
 }
