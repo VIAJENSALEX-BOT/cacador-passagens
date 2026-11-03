@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-03T07:14:49Z",
+ "atualizado": "2026-11-03T13:07:11Z",
  "origem": "BSB",
  "desconto_min": 0.3,
  "destinos": {
@@ -80,7 +80,7 @@
   "RIO": {
    "nome": "Rio de Janeiro",
    "limite": 700,
-   "mediana": null,
+   "mediana": 1439.0,
    "ofertas": [
     {
      "ida": "2026-12-02",
