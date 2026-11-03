@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-03T01:06:48Z",
+ "atualizado": "2026-11-03T07:14:49Z",
  "origem": "BSB",
  "desconto_min": 0.3,
  "destinos": {
@@ -39,7 +39,7 @@
   "SAO": {
    "nome": "São Paulo",
    "limite": 700,
-   "mediana": 930.0,
+   "mediana": 952.0,
    "ofertas": [
     {
      "ida": "2026-12-04",
