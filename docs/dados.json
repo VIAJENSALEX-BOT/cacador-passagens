@@ -1,12 +1,12 @@
 {
- "atualizado": "2026-11-03T13:07:11Z",
+ "atualizado": "2026-11-03T18:58:25Z",
  "origem": "BSB",
  "desconto_min": 0.3,
  "destinos": {
   "NAT": {
    "nome": "Natal",
    "limite": 1000,
-   "mediana": null,
+   "mediana": 3138.0,
    "ofertas": [
     {
      "ida": "2026-11-17",
@@ -44,10 +44,10 @@
     {
      "ida": "2026-12-04",
      "volta": "2026-12-08",
-     "preco": 893.0,
+     "preco": 901.0,
      "escalas": 0,
      "fonte": "Aviasales",
-     "link": "https://www.aviasales.com/search/BSB0412SAO08121?t=AD17963604001796366400000100BSBVCP17967717001796777400000095VCPBSB_62dc898a6d995e3ca541cf9d36161903_13329&search_date=02112026&expected_price_uuid=01a19cd8-dd5f-8040-26d8-079b7c43f764&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=qUkUkJy9WKx6xcmRnb6gGw&expected_price_source=share&expected_price_currency=brl&expected_price=893"
+     "link": "https://www.aviasales.com/search/BSB0412SAO08121?t=AD17963604001796366400000100BSBVCP17967717001796777400000095VCPBSB_62dc898a6d995e3ca541cf9d36161903_13378&search_date=03112026&expected_price_uuid=01a1a231-ea60-8040-6e64-d688c3cf8015&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=qUkUkJy9WKx6xcmRnb6gGw&expected_price_source=share&expected_price_currency=brl&expected_price=901"
     },
     {
      "ida": "2026-12-17",
@@ -85,10 +85,10 @@
     {
      "ida": "2026-12-02",
      "volta": "2026-12-07",
-     "preco": 500.0,
+     "preco": 954.0,
      "escalas": 0,
      "fonte": "Aviasales",
-     "link": "https://www.aviasales.com/search/BSB0212RIO07121?t=G317962146001796220600000100BSBSDU17966403001796646900000110SDUBSB_895a6d4d9f1437bba644ee6727c8480f_7388&search_date=31102026&expected_price_uuid=01a1919f-96de-8040-620a-a75f0bbf621c&static_fare_key=TY%7CP1%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=sZXeOjo-ZZtlpsGYY1qN1g&expected_price_source=share&expected_price_currency=brl&expected_price=500"
+     "link": "https://www.aviasales.com/search/BSB0212RIO07121?t=LA17962230001796229300000105BSBSDU17966304001796637000000110GIGBSB_d11ac5aa0bba5e5f4d07139c60df940b_14157&search_date=03112026&expected_price_uuid=01a1a196-c8b9-8040-2f96-657da6834208&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=MIf_RERWg6iogZQ2sCVKMg&expected_price_source=share&expected_price_currency=brl&expected_price=954"
     },
     {
      "ida": "2026-11-20",
