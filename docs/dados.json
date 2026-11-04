@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-03T18:58:25Z",
+ "atualizado": "2026-11-04T00:32:58Z",
  "origem": "BSB",
  "desconto_min": 0.3,
  "destinos": {
@@ -19,10 +19,10 @@
     {
      "ida": "2026-12-30",
      "volta": "2027-01-03",
-     "preco": 4188.0,
-     "escalas": 0,
+     "preco": 4040.0,
+     "escalas": 1,
      "fonte": "Aviasales",
-     "link": "https://www.aviasales.com/search/BSB3012NAT03011?t=LA17986452001798654800000160BSBNAT17989656001798975800000170NATBSB_d7ff751a59ee600e9abda856fcbe923e_62577&search_date=02112026&expected_price_uuid=01a19e8d-aec3-8030-6272-e8ed8453c95b&static_fare_key=TY%7CP0%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=yz32iiDGFN9-ZYlvAoI85Q&expected_price_source=share&expected_price_currency=brl&expected_price=4188"
+     "link": "https://www.aviasales.com/search/BSB3012NAT03011?t=LA17986584001798682700000405BSBCNFNAT17989998001799010000000170NATBSB_621123e3a7a401a6fa6d4cc8d718e704_60114&search_date=04112026&expected_price_uuid=01a1a3f7-e4ce-8040-6f35-7bce6dc0031d&static_fare_key=TY%7CP1%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=UfgJvxRSHaQrWzeWk-CfnQ&expected_price_source=share&expected_price_currency=brl&expected_price=4040"
     }
    ],
    "serie": [
@@ -32,6 +32,10 @@
     },
     {
      "d": "2026-11-03",
+     "min": 2654.0
+    },
+    {
+     "d": "2026-11-04",
      "min": 2654.0
     }
    ]
@@ -44,10 +48,10 @@
     {
      "ida": "2026-12-04",
      "volta": "2026-12-08",
-     "preco": 901.0,
+     "preco": 834.0,
      "escalas": 0,
      "fonte": "Aviasales",
-     "link": "https://www.aviasales.com/search/BSB0412SAO08121?t=AD17963604001796366400000100BSBVCP17967717001796777400000095VCPBSB_62dc898a6d995e3ca541cf9d36161903_13378&search_date=03112026&expected_price_uuid=01a1a231-ea60-8040-6e64-d688c3cf8015&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=qUkUkJy9WKx6xcmRnb6gGw&expected_price_source=share&expected_price_currency=brl&expected_price=901"
+     "link": "https://www.aviasales.com/search/BSB0412SAO08121?t=AD17963604001796366400000100BSBVCP17967717001796777400000095VCPBSB_62dc898a6d995e3ca541cf9d36161903_12409&search_date=04112026&expected_price_uuid=01a1a3f6-c1f9-8040-a517-1eac16ff66b7&static_fare_key=TY%7CP1%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=qUkUkJy9WKx6xcmRnb6gGw&expected_price_source=share&expected_price_currency=brl&expected_price=834"
     },
     {
      "ida": "2026-12-17",
@@ -74,6 +78,10 @@
     {
      "d": "2026-11-03",
      "min": 893.0
+    },
+    {
+     "d": "2026-11-04",
+     "min": 834.0
     }
    ]
   },
@@ -91,12 +99,12 @@
      "link": "https://www.aviasales.com/search/BSB0212RIO07121?t=LA17962230001796229300000105BSBSDU17966304001796637000000110GIGBSB_d11ac5aa0bba5e5f4d07139c60df940b_14157&search_date=03112026&expected_price_uuid=01a1a196-c8b9-8040-2f96-657da6834208&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=MIf_RERWg6iogZQ2sCVKMg&expected_price_source=share&expected_price_currency=brl&expected_price=954"
     },
     {
-     "ida": "2026-11-20",
-     "volta": "2026-11-22",
-     "preco": 1439.0,
-     "escalas": 1,
+     "ida": "2026-11-21",
+     "volta": "2026-11-23",
+     "preco": 1266.0,
+     "escalas": 0,
      "fonte": "Aviasales",
-     "link": "https://www.aviasales.com/search/BSB2011RIO22111?t=LA17952024001795220700000305BSBVCPGIG17953251001795331700000110GIGBSB_fe9f2a4247806a88e479765685fbf2e0_21248&search_date=01112026&expected_price_uuid=01a1974e-bd9c-8040-a01f-77289b040b97&static_fare_key=TY%7CP0%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=hyz4DDPyMORQSsGYMa_5tQ&expected_price_source=share&expected_price_currency=brl&expected_price=1439"
+     "link": "https://www.aviasales.com/search/BSB2111RIO23111?t=G317952387001795245000000105BSBGIG17954682001795474800000110GIGBSB_99316600d70eb0f8dd41892307ddc5f5_19035&search_date=28102026&expected_price_uuid=01a184f3-e342-8040-602f-5609877b4692&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=XD8ymOft6-TOjtnjNm3pnQ&expected_price_source=share&expected_price_currency=brl&expected_price=1266"
     },
     {
      "ida": "2026-12-29",
@@ -115,6 +123,10 @@
     {
      "d": "2026-11-03",
      "min": 500.0
+    },
+    {
+     "d": "2026-11-04",
+     "min": 954.0
     }
    ]
   }
