@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-05T01:11:25Z",
+ "atualizado": "2026-11-05T07:24:58Z",
  "origem": "BSB",
  "desconto_min": 0.3,
  "destinos": {
@@ -96,15 +96,15 @@
   "RIO": {
    "nome": "Rio de Janeiro",
    "limite": 700,
-   "mediana": 1266.0,
+   "mediana": 1352.5,
    "ofertas": [
     {
-     "ida": "2026-12-02",
+     "ida": "2026-12-03",
      "volta": "2026-12-07",
-     "preco": 954.0,
+     "preco": 934.0,
      "escalas": 0,
      "fonte": "Aviasales",
-     "link": "https://www.aviasales.com/search/BSB0212RIO07121?t=LA17962230001796229300000105BSBSDU17966304001796637000000110GIGBSB_d11ac5aa0bba5e5f4d07139c60df940b_14157&search_date=03112026&expected_price_uuid=01a1a196-c8b9-8040-2f96-657da6834208&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=MIf_RERWg6iogZQ2sCVKMg&expected_price_source=share&expected_price_currency=brl&expected_price=954"
+     "link": "https://www.aviasales.com/search/BSB0312RIO07121?t=LA17962959001796302200000105BSBGIG17966460001796652300000105GIGBSB_5513c088c87f438f52eb43dcb52ed919_13992&search_date=05112026&expected_price_uuid=01a1a967-4fed-8040-2e1e-d551ae25cf89&static_fare_key=TY%7CP0%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=7bSiqxIpSUItD8_tvZsJsQ&expected_price_source=share&expected_price_currency=brl&expected_price=934"
     },
     {
      "ida": "2026-11-20",
@@ -138,7 +138,7 @@
     },
     {
      "d": "2026-11-05",
-     "min": 954.0
+     "min": 934.0
     }
    ]
   }
