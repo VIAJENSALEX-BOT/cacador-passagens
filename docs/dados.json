@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-10T13:07:55Z",
+ "atualizado": "2026-11-10T18:58:27Z",
  "origem": "BSB",
  "desconto_min": 0.3,
  "destinos": {
@@ -60,14 +60,6 @@
      "escalas": 0,
      "fonte": "Aviasales",
      "link": "https://www.aviasales.com/search/BSB0512SAO08121?t=AD17965005001796507100000110BSBCGH17967123001796718600000105CGHBSB_987b83847ba3a59fd776b04b36d518da_12727&search_date=07112026&expected_price_uuid=01a1b69f-aa35-8040-6d82-32b8a5a46269&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=oZ30NmY3cSpv-NrsvATSuQ&expected_price_source=share&expected_price_currency=brl&expected_price=855"
-    },
-    {
-     "ida": "2026-12-23",
-     "volta": "2026-12-28",
-     "preco": 1064.0,
-     "escalas": 0,
-     "fonte": "Aviasales",
-     "link": "https://www.aviasales.com/search/BSB2312SAO28121?t=AD17980215001798027500000100BSBVCP17984775001798483200000095VCPBSB_d893ccc26ffcdd6d54cb035423c3e490_15798&search_date=03112026&expected_price_uuid=01a1a22d-3849-8040-2c1a-60f1b0793e54&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=1A4M3E3-CQA87PpOqFU_ZA&expected_price_source=share&expected_price_currency=brl&expected_price=1064"
     },
     {
      "ida": "2027-01-06",
@@ -149,10 +141,10 @@
     {
      "ida": "2027-01-04",
      "volta": "2027-01-10",
-     "preco": 1237.0,
+     "preco": 1258.0,
      "escalas": 0,
      "fonte": "Aviasales",
-     "link": "https://www.aviasales.com/search/BSB0401RIO10011?t=LA17990910001799097300000105BSBGIG17995587001799565300000110GIGBSB_9c045f7ebc44baed4098ffe367e8b6ec_18571&search_date=10112026&expected_price_uuid=01a1c526-4986-8040-a044-a740eb08f57a&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=Jz79vQDVUDOQWPRsvRDLWQ&expected_price_source=share&expected_price_currency=brl&expected_price=1237"
+     "link": "https://www.aviasales.com/search/BSB0401RIO10011?t=LA17990910001799097300000105BSBGIG17995587001799565300000110GIGBSB_9c045f7ebc44baed4098ffe367e8b6ec_18571&search_date=10112026&expected_price_uuid=01a1c526-4986-8040-a044-a740eb08f57a&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=Jz79vQDVUDOQWPRsvRDLWQ&expected_price_source=share&expected_price_currency=brl&expected_price=1258"
     }
    ],
    "serie": [
