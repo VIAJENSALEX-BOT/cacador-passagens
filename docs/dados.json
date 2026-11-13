@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-12T19:00:08Z",
+ "atualizado": "2026-11-13T01:15:41Z",
  "origem": "BSB",
  "desconto_min": 0.3,
  "destinos": {
@@ -11,10 +11,10 @@
     {
      "ida": "2027-03-03",
      "volta": "2027-03-09",
-     "preco": 1160.0,
+     "preco": 1163.0,
      "escalas": 1,
      "fonte": "Aviasales",
-     "link": "https://www.aviasales.com/search/BSB0303NAT09031?t=G318040860001804123500000625BSBSSANAT18045633001804615800000875NATGIGBSB_e525d1ed311429be526821b958b36995_17067&search_date=12112026&expected_price_uuid=01a1d074-c2ae-8040-abbe-993c018bcf88&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=cKXFrkFqSJPpuBRTvlvXRA&expected_price_source=share&expected_price_currency=brl&expected_price=1160"
+     "link": "https://www.aviasales.com/search/BSB0303NAT09031?t=G318040860001804123500000625BSBSSANAT18045633001804615800000875NATGIGBSB_e525d1ed311429be526821b958b36995_17067&search_date=12112026&expected_price_uuid=01a1d074-c2ae-8040-abbe-993c018bcf88&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=cKXFrkFqSJPpuBRTvlvXRA&expected_price_source=share&expected_price_currency=brl&expected_price=1163"
     }
    ],
    "serie": [
@@ -41,6 +41,10 @@
     {
      "d": "2026-11-12",
      "min": 1160.0
+    },
+    {
+     "d": "2026-11-13",
+     "min": 1163.0
     }
    ]
   },
@@ -118,6 +122,10 @@
     {
      "d": "2026-11-12",
      "min": 484.0
+    },
+    {
+     "d": "2026-11-13",
+     "min": 484.0
     }
    ]
   },
@@ -129,10 +137,10 @@
     {
      "ida": "2027-02-17",
      "volta": "2027-02-22",
-     "preco": 697.0,
+     "preco": 682.0,
      "escalas": 1,
      "fonte": "Aviasales",
-     "link": "https://www.aviasales.com/search/BSB1702RIO22021?t=G318028455001802872500000450BSBCGHGIG18033012001803324000000380GIGVIXBSB_e83ed7d8a7a90d558e267eba117105a6_10385&search_date=08112026&expected_price_uuid=01a1bd37-427e-8031-294f-036c14d2e4df&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=-TMhM6FxyUO6CSJauMFrxA&expected_price_source=share&expected_price_currency=brl&expected_price=697"
+     "link": "https://www.aviasales.com/search/BSB1702RIO22021?t=G318028455001802872500000450BSBCGHGIG18032760001803293700000295GIGCGHBSB_a9a22ef9dbb43afcc58e555432fff8fe_10015&search_date=12112026&expected_price_uuid=01a1d1d8-06ae-8030-60ae-fa054723fdfe&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=d79BD6V4IxGKEoYAsLoQRw&expected_price_source=share&expected_price_currency=brl&expected_price=682"
     },
     {
      "ida": "2027-02-05",
@@ -143,12 +151,12 @@
      "link": "https://www.aviasales.com/search/BSB0502RIO09021?t=LA18018639001801870200000105BSBGIG18021507001802157300000110GIGBSB_0d2c806b908a434403a89984045507e8_17043&search_date=11112026&expected_price_uuid=01a1c854-eb86-8030-67d3-5769e2d89983&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=JaTCzC-rmC7eDF8WAoKp3w&expected_price_source=share&expected_price_currency=brl&expected_price=1140"
     },
     {
-     "ida": "2027-01-04",
-     "volta": "2027-01-10",
-     "preco": 1254.0,
+     "ida": "2027-01-07",
+     "volta": "2027-01-11",
+     "preco": 1533.0,
      "escalas": 0,
      "fonte": "Aviasales",
-     "link": "https://www.aviasales.com/search/BSB0401RIO10011?t=LA17990910001799097300000105BSBGIG17995587001799565300000110GIGBSB_9c045f7ebc44baed4098ffe367e8b6ec_18571&search_date=10112026&expected_price_uuid=01a1c526-4986-8040-a044-a740eb08f57a&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=Jz79vQDVUDOQWPRsvRDLWQ&expected_price_source=share&expected_price_currency=brl&expected_price=1254"
+     "link": "https://www.aviasales.com/search/BSB0701RIO11011?t=LA17993583001799364600000105BSBGIG17996451001799651700000110GIGBSB_c71d7ee1bf8c82445152eb01de7320ec_22793&search_date=10112026&expected_price_uuid=01a1c660-f29b-8040-2b32-93bc20efb9a2&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=JaTCzC-rmC7eDF8WAoKp3w&expected_price_source=share&expected_price_currency=brl&expected_price=1533"
     }
    ],
    "serie": [
@@ -195,6 +203,10 @@
     {
      "d": "2026-11-12",
      "min": 697.0
+    },
+    {
+     "d": "2026-11-13",
+     "min": 682.0
     }
    ]
   }
