@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-14T01:07:00Z",
+ "atualizado": "2026-11-14T07:06:15Z",
  "origem": "BSB",
  "desconto_min": 0.3,
  "destinos": {
@@ -153,10 +153,10 @@
     {
      "ida": "2027-02-05",
      "volta": "2027-02-09",
-     "preco": 1140.0,
+     "preco": 1158.0,
      "escalas": 0,
      "fonte": "Aviasales",
-     "link": "https://www.aviasales.com/search/BSB0502RIO09021?t=LA18018639001801870200000105BSBGIG18021507001802157300000110GIGBSB_0d2c806b908a434403a89984045507e8_17043&search_date=11112026&expected_price_uuid=01a1c854-eb86-8030-67d3-5769e2d89983&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=JaTCzC-rmC7eDF8WAoKp3w&expected_price_source=share&expected_price_currency=brl&expected_price=1140"
+     "link": "https://www.aviasales.com/search/BSB0502RIO09021?t=LA18018108001801817100000105BSBSDU18021528001802159400000110SDUBSB_f7eda6b407afe644cbf6dc3e78448363_16924&search_date=14112026&expected_price_uuid=01a1d7d3-7a0c-8030-ece7-9fa3fec2a580&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=85Slk03UbWPBGKzJH9Ly2w&expected_price_source=share&expected_price_currency=brl&expected_price=1158"
     },
     {
      "ida": "2027-01-07",
