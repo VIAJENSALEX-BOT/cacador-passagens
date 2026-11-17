@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-16T19:00:16Z",
+ "atualizado": "2026-11-17T01:16:52Z",
  "origem": "BSB",
  "desconto_min": 0.3,
  "destinos": {
@@ -57,37 +57,33 @@
     {
      "d": "2026-11-16",
      "min": 3952.0
+    },
+    {
+     "d": "2026-11-17",
+     "min": 3952.0
     }
    ]
   },
   "SAO": {
    "nome": "São Paulo",
    "limite": 700,
-   "mediana": 952.0,
+   "mediana": 930.0,
    "ofertas": [
     {
      "ida": "2027-03-10",
      "volta": "2027-03-15",
-     "preco": 453.0,
+     "preco": 455.0,
      "escalas": 0,
      "fonte": "Aviasales",
-     "link": "https://www.aviasales.com/search/BSB1003SAO15031?t=AD18046548001804660800000100BSBVCP18050907001805096400000095VCPBSB_5c5f75a9d90f20a2789c9f0367a88a31_6517&search_date=16112026&expected_price_uuid=01a1e1ff-9ddf-8030-a995-0fcf8e64269e&static_fare_key=TY%7CP0%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=zQ4xFlzhWd6ek8tNS_0w7g&expected_price_source=share&expected_price_currency=brl&expected_price=453"
+     "link": "https://www.aviasales.com/search/BSB1003SAO15031?t=AD18046548001804660800000100BSBVCP18050907001805096400000095VCPBSB_5c5f75a9d90f20a2789c9f0367a88a31_6517&search_date=16112026&expected_price_uuid=01a1e1ff-9ddf-8030-a995-0fcf8e64269e&static_fare_key=TY%7CP0%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=zQ4xFlzhWd6ek8tNS_0w7g&expected_price_source=share&expected_price_currency=brl&expected_price=455"
     },
     {
-     "ida": "2027-01-22",
-     "volta": "2027-01-28",
-     "preco": 484.0,
+     "ida": "2026-12-04",
+     "volta": "2026-12-08",
+     "preco": 1129.0,
      "escalas": 0,
      "fonte": "Aviasales",
-     "link": "https://www.aviasales.com/search/BSB2201SAO28011?t=AD18006060001800612000000100BSBVCP18011727001801178400000095VCPBSB_8f4941c0d3300cdeb5cd9b327e99a5f1_7230&search_date=11112026&expected_price_uuid=01a1ccc0-c343-8030-ed32-99d42a05f994&static_fare_key=TY%7CP1%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=v8kwUXOwXiHzYNIxdB-N7A&expected_price_source=share&expected_price_currency=brl&expected_price=484"
-    },
-    {
-     "ida": "2027-02-05",
-     "volta": "2027-02-07",
-     "preco": 574.0,
-     "escalas": 0,
-     "fonte": "Aviasales",
-     "link": "https://www.aviasales.com/search/BSB0502SAO07021?t=AD18018036001801809600000100BSBVCP18020229001802028600000095VCPBSB_e0f353360fe2bdf79679573337acfb75_8574&search_date=11112026&expected_price_uuid=01a1cc5c-e0e7-8040-a34c-299b014ff291&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=8ehJ78UstVe1IPdCs73-zQ&expected_price_source=share&expected_price_currency=brl&expected_price=574"
+     "link": "https://www.aviasales.com/search/BSB0412SAO08121?t=AD17963664001796372700000105BSBCGH17967504001796756700000105CGHBSB_f19bd43986e91b078ebfaa28eca6aa28_16503&search_date=14112026&expected_price_uuid=01a1da76-8903-8040-2f3b-c37568749a46&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=NYaQUJfLWv8U6qxB0l9Tmg&expected_price_source=share&expected_price_currency=brl&expected_price=1129"
     }
    ],
    "serie": [
@@ -150,6 +146,10 @@
     {
      "d": "2026-11-16",
      "min": 446.0
+    },
+    {
+     "d": "2026-11-17",
+     "min": 455.0
     }
    ]
   },
@@ -159,12 +159,12 @@
    "mediana": 1140.0,
    "ofertas": [
     {
-     "ida": "2027-02-05",
-     "volta": "2027-02-09",
-     "preco": 1123.0,
-     "escalas": 0,
+     "ida": "2026-12-03",
+     "volta": "2026-12-08",
+     "preco": 1370.0,
+     "escalas": 1,
      "fonte": "Aviasales",
-     "link": "https://www.aviasales.com/search/BSB0502RIO09021?t=LA18018639001801870200000105BSBGIG18021528001802159400000110SDUBSB_4defb41746e27c07bdee85a340ec1733_16420&search_date=14112026&expected_price_uuid=01a1da4a-fad8-8031-6f24-0b833c27cfc1&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=a0QJehelDAWTkfupmTBzGg&expected_price_source=share&expected_price_currency=brl&expected_price=1123"
+     "link": "https://www.aviasales.com/search/BSB0312RIO08121?t=AD17962860001796314800000480BSBVCPGIG17967627001796777400000245GIGVCPBSB_657166fb3f19433bc6dfa7b062ced746_19535&search_date=16112026&expected_price_uuid=01a1e55c-de2f-8030-6ae5-e6d104c3fbc7&static_fare_key=TY%7CP1%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=sq06EpvuzypGRiATFnyC-g&expected_price_source=share&expected_price_currency=brl&expected_price=1370"
     }
    ],
    "serie": [
@@ -227,6 +227,10 @@
     {
      "d": "2026-11-16",
      "min": 1123.0
+    },
+    {
+     "d": "2026-11-17",
+     "min": 1370.0
     }
    ]
   }
