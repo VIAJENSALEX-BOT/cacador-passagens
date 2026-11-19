@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-18T19:01:46Z",
+ "atualizado": "2026-11-19T01:19:33Z",
  "origem": "BSB",
  "desconto_min": 0.3,
  "destinos": {
@@ -8,6 +8,14 @@
    "limite": 1000,
    "mediana": 3622.0,
    "ofertas": [
+    {
+     "ida": "2026-12-06",
+     "volta": "2026-12-10",
+     "preco": 1686.0,
+     "escalas": 1,
+     "fonte": "Aviasales",
+     "link": "https://www.aviasales.com/search/BSB0612NAT10121?t=LA17965830001796646600001060BSBRECNAT17968767001796887200000175NATBSB_e0ddba9871f9aa1ca7cd031af7dc0692_24120&search_date=17112026&expected_price_uuid=01a1e737-e054-8030-6a4d-c25a89dbfde4&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=YC42Uy71MuIfs8BOtwnt_g&expected_price_source=share&expected_price_currency=brl&expected_price=1686"
+    },
     {
      "ida": "2026-12-30",
      "volta": "2027-01-03",
@@ -65,13 +73,17 @@
     {
      "d": "2026-11-18",
      "min": 3958.0
+    },
+    {
+     "d": "2026-11-19",
+     "min": 1686.0
     }
    ]
   },
   "SAO": {
    "nome": "São Paulo",
    "limite": 700,
-   "mediana": 908.0,
+   "mediana": 897.0,
    "ofertas": [
     {
      "ida": "2027-03-10",
@@ -166,6 +178,10 @@
     {
      "d": "2026-11-18",
      "min": 455.0
+    },
+    {
+     "d": "2026-11-19",
+     "min": 455.0
     }
    ]
   },
@@ -250,6 +266,10 @@
     },
     {
      "d": "2026-11-18",
+     "min": 1370.0
+    },
+    {
+     "d": "2026-11-19",
      "min": 1370.0
     }
    ]
