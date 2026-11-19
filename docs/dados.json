@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-19T13:24:21Z",
+ "atualizado": "2026-11-19T19:06:01Z",
  "origem": "BSB",
  "desconto_min": 0.3,
  "destinos": {
@@ -83,7 +83,7 @@
   "SAO": {
    "nome": "São Paulo",
    "limite": 700,
-   "mediana": 887.0,
+   "mediana": 881.0,
    "ofertas": [
     {
      "ida": "2027-02-13",
@@ -96,10 +96,10 @@
     {
      "ida": "2027-03-10",
      "volta": "2027-03-15",
-     "preco": 538.0,
+     "preco": 541.0,
      "escalas": 0,
      "fonte": "Aviasales",
-     "link": "https://www.aviasales.com/search/BSB1003SAO15031?t=AD18046845001804690500000100BSBVCP18051303001805136000000095VCPBSB_866a1991d60c8227023f84128ef11f14_7538&search_date=19112026&expected_price_uuid=01a1f1af-cdc1-8031-2700-c4d678f9e698&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=2jZ35877VguZH1FuhLYmQw&expected_price_source=share&expected_price_currency=brl&expected_price=538"
+     "link": "https://www.aviasales.com/search/BSB1003SAO15031?t=AD18046845001804690500000100BSBVCP18051303001805136000000095VCPBSB_866a1991d60c8227023f84128ef11f14_7538&search_date=19112026&expected_price_uuid=01a1f1af-cdc1-8031-2700-c4d678f9e698&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=2jZ35877VguZH1FuhLYmQw&expected_price_source=share&expected_price_currency=brl&expected_price=541"
     },
     {
      "ida": "2026-12-05",
