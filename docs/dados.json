@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-19T19:06:01Z",
+ "atualizado": "2026-11-20T01:13:44Z",
  "origem": "BSB",
  "desconto_min": 0.3,
  "destinos": {
@@ -15,14 +15,6 @@
      "escalas": 1,
      "fonte": "Aviasales",
      "link": "https://www.aviasales.com/search/BSB0612NAT10121?t=LA17965830001796646600001060BSBRECNAT17968767001796887200000175NATBSB_e0ddba9871f9aa1ca7cd031af7dc0692_24120&search_date=17112026&expected_price_uuid=01a1e737-e054-8030-6a4d-c25a89dbfde4&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=YC42Uy71MuIfs8BOtwnt_g&expected_price_source=share&expected_price_currency=brl&expected_price=1686"
-    },
-    {
-     "ida": "2026-12-30",
-     "volta": "2027-01-03",
-     "preco": 3958.0,
-     "escalas": 1,
-     "fonte": "Aviasales",
-     "link": "https://www.aviasales.com/search/BSB3012NAT03011?t=LA17986068001798622700000265BSBRECNAT17989656001798975800000170NATBSB_5692712853909ffc5eaddd216dd8d47c_56237&search_date=17112026&expected_price_uuid=01a1ebc3-8243-8030-6f6f-0236c2ab751d&static_fare_key=TY%7CP0%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=BdSOy94KFjaKYaayq19tRA&expected_price_source=share&expected_price_currency=brl&expected_price=3958"
     }
    ],
    "serie": [
@@ -77,6 +69,10 @@
     {
      "d": "2026-11-19",
      "min": 1686.0
+    },
+    {
+     "d": "2026-11-20",
+     "min": 1686.0
     }
    ]
   },
@@ -85,6 +81,14 @@
    "limite": 700,
    "mediana": 881.0,
    "ofertas": [
+    {
+     "ida": "2027-01-29",
+     "volta": "2027-01-31",
+     "preco": 433.0,
+     "escalas": 0,
+     "fonte": "Aviasales",
+     "link": "https://www.aviasales.com/search/BSB2901SAO31011?t=AD18012285001801234500000100BSBVCP18014184001801424100000095VCPBSB_17628ddc2c50a1e5a7422843f585793d_5985&search_date=19112026&expected_price_uuid=01a1f598-b7bc-8031-2a29-28af06f25bec&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=RK1awASWlC4WPSXNctD46w&expected_price_source=share&expected_price_currency=brl&expected_price=433"
+    },
     {
      "ida": "2027-02-13",
      "volta": "2027-02-17",
@@ -96,10 +100,10 @@
     {
      "ida": "2027-03-10",
      "volta": "2027-03-15",
-     "preco": 541.0,
+     "preco": 543.0,
      "escalas": 0,
      "fonte": "Aviasales",
-     "link": "https://www.aviasales.com/search/BSB1003SAO15031?t=AD18046845001804690500000100BSBVCP18051303001805136000000095VCPBSB_866a1991d60c8227023f84128ef11f14_7538&search_date=19112026&expected_price_uuid=01a1f1af-cdc1-8031-2700-c4d678f9e698&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=2jZ35877VguZH1FuhLYmQw&expected_price_source=share&expected_price_currency=brl&expected_price=541"
+     "link": "https://www.aviasales.com/search/BSB1003SAO15031?t=AD18046845001804690500000100BSBVCP18051303001805136000000095VCPBSB_866a1991d60c8227023f84128ef11f14_7538&search_date=19112026&expected_price_uuid=01a1f1af-cdc1-8031-2700-c4d678f9e698&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=2jZ35877VguZH1FuhLYmQw&expected_price_source=share&expected_price_currency=brl&expected_price=543"
     },
     {
      "ida": "2026-12-05",
@@ -182,6 +186,10 @@
     {
      "d": "2026-11-19",
      "min": 455.0
+    },
+    {
+     "d": "2026-11-20",
+     "min": 433.0
     }
    ]
   },
@@ -190,6 +198,14 @@
    "limite": 700,
    "mediana": 1150.0,
    "ofertas": [
+    {
+     "ida": "2027-01-18",
+     "volta": "2027-01-23",
+     "preco": 768.0,
+     "escalas": 0,
+     "fonte": "Aviasales",
+     "link": "https://www.aviasales.com/search/BSB1801RIO23011?t=LA18003006001800306900000105BSBGIG18007068001800713100000105GIGBSB_f1a0421fc33c5d0d1c64ffcb6468aa0b_11228&search_date=15112026&expected_price_uuid=01a1e06e-24ac-8040-6913-32c79cdd0042&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=nxoI52QLvexWUV_sYySoKA&expected_price_source=share&expected_price_currency=brl&expected_price=768"
+    },
     {
      "ida": "2026-12-03",
      "volta": "2026-12-08",
@@ -271,6 +287,10 @@
     {
      "d": "2026-11-19",
      "min": 1370.0
+    },
+    {
+     "d": "2026-11-20",
+     "min": 768.0
     }
    ]
   }
