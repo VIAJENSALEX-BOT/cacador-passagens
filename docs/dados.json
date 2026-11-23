@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-23T13:27:12Z",
+ "atualizado": "2026-11-23T19:09:06Z",
  "origem": "BSB",
  "desconto_min": 0.3,
  "destinos": {
@@ -19,10 +19,10 @@
     {
      "ida": "2026-12-06",
      "volta": "2026-12-10",
-     "preco": 2138.0,
+     "preco": 2145.0,
      "escalas": 0,
      "fonte": "Aviasales",
-     "link": "https://www.aviasales.com/search/BSB0612NAT10121?t=LA17965479001796557500000160BSBNAT17968767001796887200000175NATBSB_459c199114ff1745ba156cd2efa32eb5_29193&search_date=23112026&expected_price_uuid=01a20620-cbe6-8030-a8de-d469243dab63&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=PFl8OIikhlO48UmlUR0SHA&expected_price_source=share&expected_price_currency=brl&expected_price=2138"
+     "link": "https://www.aviasales.com/search/BSB0612NAT10121?t=LA17965479001796557500000160BSBNAT17968767001796887200000175NATBSB_459c199114ff1745ba156cd2efa32eb5_29193&search_date=23112026&expected_price_uuid=01a20620-cbe6-8030-a8de-d469243dab63&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=PFl8OIikhlO48UmlUR0SHA&expected_price_source=share&expected_price_currency=brl&expected_price=2145"
     }
    ],
    "serie": [
@@ -212,7 +212,7 @@
   "RIO": {
    "nome": "Rio de Janeiro",
    "limite": 700,
-   "mediana": 1150.0,
+   "mediana": 1144.0,
    "ofertas": [
     {
      "ida": "2027-03-01",
@@ -233,10 +233,10 @@
     {
      "ida": "2027-01-18",
      "volta": "2027-01-23",
-     "preco": 817.0,
+     "preco": 820.0,
      "escalas": 0,
      "fonte": "Aviasales",
-     "link": "https://www.aviasales.com/search/BSB1801RIO23011?t=G318002955001800301500000100BSBSDU18007395001800746100000110GIGBSB_238c92bf975b6775891020ab4fd00637_11157&search_date=23112026&expected_price_uuid=01a206ca-0c97-8030-ab86-3af5c0ed0c8d&static_fare_key=TY%7CP1%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=YPUoEkRwPkmAWzhnVxkZ6A&expected_price_source=share&expected_price_currency=brl&expected_price=817"
+     "link": "https://www.aviasales.com/search/BSB1801RIO23011?t=G318002955001800301500000100BSBSDU18007395001800746100000110GIGBSB_238c92bf975b6775891020ab4fd00637_11157&search_date=23112026&expected_price_uuid=01a206ca-0c97-8030-ab86-3af5c0ed0c8d&static_fare_key=TY%7CP1%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=YPUoEkRwPkmAWzhnVxkZ6A&expected_price_source=share&expected_price_currency=brl&expected_price=820"
     }
    ],
    "serie": [
