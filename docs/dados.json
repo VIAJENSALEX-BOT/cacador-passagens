@@ -1,12 +1,12 @@
 {
- "atualizado": "2026-11-28T01:22:24Z",
+ "atualizado": "2026-11-28T07:22:27Z",
  "origem": "BSB",
  "desconto_min": 0.3,
  "destinos": {
   "NAT": {
    "nome": "Natal",
    "limite": 1000,
-   "mediana": 2145.0,
+   "mediana": 2126.0,
    "ofertas": [
     {
      "ida": "2027-02-19",
@@ -151,7 +151,7 @@
   "SAO": {
    "nome": "São Paulo",
    "limite": 700,
-   "mediana": 834.0,
+   "mediana": 830.0,
    "ofertas": [
     {
      "ida": "2027-03-05",
